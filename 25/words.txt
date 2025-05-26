@@ -1,0 +1,6 @@
+aabb
+abc
+aabbc
+racecar
+abca
+123321
