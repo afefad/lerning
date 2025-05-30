@@ -49,8 +49,8 @@
 # В файле numbers.txt есть N чисел, разделённых пробелами и литералом пропуска строки.
 # Напишите программу, которая подсчитает общую сумму чисел в файле.
 # Для считывания файла реализуйте специальный генератор.
+from collections.abc import Iterable
 
-# Блок для генерации файла
 
 def nums_gen(quantity_of_numbers: int = 10 ** 2,
              min_num: int = 1,
@@ -75,9 +75,9 @@ def nums_gen(quantity_of_numbers: int = 10 ** 2,
         num = str(randint(min_num, max_num)) + '\n'
         yield num
 
-def lazy_open(file: str):
+def lazy_open(file: str) -> Iterable[str]:
 
-    def lazy_line(file):
+    def lazy_line(file: str) -> Iterable[str]:
         with open(file, 'r') as num_file:
             for i_line in num_file:
                 yield i_line
